@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Soccer Players Tier List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="tierlist.html">Tier List</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+  
+  <h1>Contact Us</h1>
+
+  <form id="myform" action="#" method="post">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
+
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" placeholder="Your email" required><br><br>
+
+    <label for="fav">Who's your favorite player?</label><br>
+    <input type="text" id="fav" name="fav"><br><br>
+
+    <p>Do you agree Messi is the GOAT?</p>
+    <input type="radio" id="yes" name="goat" value="Yes">
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" name="goat" value="No">
+    <label for="no">No</label><br><br>
+
+    <label for="team">Favorite Team:</label><br>
+    <select id="team" name="team">
+      <option value="">Select one</option>
+      <option>Real Madrid</option>
+      <option>Barcelona</option>
+      <option>Man City</option>
+      <option>PSG</option>
+      <option>Other</option>
+    </select><br><br>
+
+    <label for="message">Your Message:</label><br>
+    <textarea id="message" name="message" rows="4" placeholder="Type your message..." required></textarea><br><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <footer>
+    <p>&copy; 2025 Soccer Tier List Project by Adelaja Oluwasimisola</p>
+  </footer>
+
+  <script>
+    document.getElementById('myform').addEventListener('submit', function(event) {
+      event.preventDefault(); // Stop the form from submitting normally
+
+      // Collect all form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const favorite = document.getElementById('fav').value;
+      const goat = document.querySelector('input[name="goat"]:checked')?.value || "Not selected";
+      const team = document.getElementById('team').value;
+      const message = document.getElementById('message').value;
+
+      // Combine form data into one string
+      const data = `Name: ${name} Email ${email} Favorite Player: ${favorite} Messi is the GOAT: ${goat} Favorite Team: ${team} Message: ${message}`;
+
+      // Create and trigger download
+      const blob = new Blob([data], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${name || 'form'}_soccer_form_data.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>

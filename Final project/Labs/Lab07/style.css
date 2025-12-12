@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #b7c3b4;
+  color: #222;
+  margin: 20px;
+}
+
+nav {
+  background-color: #222;
+  padding: 10px;
+}
+
+nav a {
+  color: rgb(192, 27, 27);
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  width: 70%;
+  background-color: rgb(237, 230, 230);
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #555;
+  color: rgb(202, 67, 67);
+}
+
+img {
+  border-radius: 8px;
+}
+
+form {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  width: 360px;
+}
